@@ -1,0 +1,2 @@
+class CookGenre < ApplicationRecord
+end
