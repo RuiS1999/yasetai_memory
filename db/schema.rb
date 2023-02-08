@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 2023_02_02_155456) do
   create_table "cook_comments", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "cook_id", null: false
+    t.integer "review", null: false
     t.text "comment", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -193,16 +194,16 @@ ActiveRecord::Schema.define(version: 2023_02_02_155456) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.string "public_uid", null: false
+    t.string "id_name", null: false
     t.string "name", null: false
     t.text "profile"
-    t.integer "sex"
+    t.integer "sex", null: false
     t.date "birth_day", null: false
     t.boolean "is_delete", default: false, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["public_uid"], name: "index_users_on_public_uid", unique: true
+    t.index ["id_name"], name: "index_users_on_id_name", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
