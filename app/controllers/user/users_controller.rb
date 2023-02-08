@@ -1,6 +1,6 @@
 class User::UsersController < ApplicationController
   def index
-    
+
   end
 
   def show
@@ -8,8 +8,9 @@ class User::UsersController < ApplicationController
 
   def edit
   end
-  
-  
+
+  def update
+  end
 
   def retire
   end
