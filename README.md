@@ -1,24 +1,26 @@
-# README
+# 痩せたいMemory
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイトURL
+URL:<br>
+<br>
 
-Things you may want to cover:
+## ER図
+https://drive.google.com/file/d/1yb4wmomUPHPlnOSXScnbHr8g309BeXKK/view?usp=sharing
 
-* Ruby version
+## テーブル設計書
+URL: https://docs.google.com/spreadsheets/d/12vHd6etmelHMPhHnMpgkWzmSUPd9O4j8MhwpOIEB5pI/edit?usp=sharing
 
-* System dependencies
+## 詳細設計書
+URL: https://docs.google.com/spreadsheets/d/1_PHQPYePp_282p7bobAfgWIyZqjrbGXnCHWS074rvhk/edit?usp=sharing
 
-* Configuration
+## サイト概要
+<br>
+<br>
 
-* Database creation
+## サイトテーマ
+*
+<br>
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## テーマを選んだ理由
+<br>
+<br>
