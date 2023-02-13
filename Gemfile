@@ -66,8 +66,6 @@ gem "chartkick"
 
 gem 'simple_calendar', '~> 2.0'
 
-gem 'public_uid'
-
 gem 'impressionist'
 
 gem "net-smtp"

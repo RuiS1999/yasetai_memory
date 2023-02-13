@@ -1,7 +1,7 @@
 <h2>Sign up</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "users/shared/error_messages", resource: resource %>
+<%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user form-signin' do |f| %>
+  <%= render "user/shared/error_messages", resource: resource %>
 
   <div class="field">
     <%= f.label :email %><br />
@@ -21,9 +21,29 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
+  <div class="field">
+    <%= f.label :id_name %><br />
+    <%= f.field :id_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :sex %><br />
+    <%= f.field :sex %>
+  </div>
+
+  <div class="field">
+    <%= f.label :birth_day %><br />
+    <%= f.date_field :birth_day %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
 
-<%= render "users/shared/links" %>
+<%= render "user/shared/links" %>
