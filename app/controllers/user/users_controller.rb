@@ -1,9 +1,9 @@
 class User::UsersController < ApplicationController
   def index
     if user_signed_in?
-      @users = User.where.not(id: current_user.id).where.not(is_deleted: true)
+      @users = User.where.not(id: current_user.id).where.not(is_delete: true)
     else
-      @users = User.where.not(is_deleted: true)
+      @users = User.where.not(is_delete: true)
     end
   end
 

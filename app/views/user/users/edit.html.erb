@@ -1,2 +1,32 @@
-<h1>User::Users#edit</h1>
-<p>Find me in app/views/user/users/edit.html.erb</p>
+<div>
+  <div>
+    <%= form_with model: @user, url: user_path do |f| %>
+      <div>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+      </div>
+      <div>
+        <%= f.label :id_name %>
+        <%= f.text_field :id_name %>
+      </div>
+      <div>
+        <%= f.label :profile %>
+        <%= f.text_area :plofile %>
+      </div>
+      <div>
+        <%= f.label :sex %>
+        <%= f.radio_button :sex, User.sexes.key(0) %>
+        <%= f.label :sex, "男性", value: User.sexes.key(0) %>
+        <%= f.radio_button :sex, User.sexes.key(1) %>
+        <%= f.label :sex, "女性", value: User.sexes.key(1) %>
+        <%= f.radio_button :sex, User.sexes.key(2) %>
+        <%= f.label :sex, "その他", value: User.sexes.key(2) %>
+      </div>
+      <div>
+        <%= f.label :birth_date, "生年月日" %>
+        <%= f.date_select :birth_date %>
+      </div>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>

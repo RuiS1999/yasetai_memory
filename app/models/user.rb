@@ -12,7 +12,8 @@ class User < ApplicationRecord
   has_many :cook_favorites,     dependent: :destroy
   has_many :tranings,           dependent: :destroy
 
-
+  # 画像
+  has_one_attached :profile_image
 
   # フォローする側から中間テーブルへのアソシエーション
   has_many :follows, foreign_key: :following_id
@@ -28,4 +29,16 @@ class User < ApplicationRecord
   def is_followed_by?(user)
     reverse_of_follows.find_by(following_id: user.id).present?
   end
+
+  # プロフィール画像正方形にする
+  def get_profile_image
+    unless profile_image.attached?
+      file_path = Rails.root.join('app/assets/images/default_image.jpg')
+      profile_image.attach(io: File.open(file_path), filename: 'default-image.jpg', content_type: 'image/jpeg')
+    end
+    profile_image.variant(gravity: "center", resize:"300x300^", crop:"300x300+0+0").processed
+  end
+
+  # 性別enum
+  enum sex:    { male: 0, female: 1, other: 2 }
 end
