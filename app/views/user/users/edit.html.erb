@@ -1,6 +1,12 @@
 <div>
   <div>
     <%= form_with model: @user, url: user_path do |f| %>
+      <div class="form-group">
+        <label class="text-secondary">画像</label><br>
+        <%= f.file_field :profile_image %>
+      </div>
+      <div id="new-image"></div>  #追記
+      </div>
       <div>
         <%= f.label :name %>
         <%= f.text_field :name %>
@@ -30,3 +36,27 @@
     <% end %>
   </div>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const createImageHTML = (blob) => {
+      const imageElement = document.getElementById('new-image');
+      const blobImage = document.createElement('img');
+      blobImage.setAttribute('class', 'new-img')
+      blobImage.setAttribute('src', blob);
+
+      imageElement.appendChild(blobImage);
+    };
+
+    document.getElementById('user_profile_image').addEventListener('change', (e) => {
+      const imageContent = document.querySelector('img');
+      if (imageContent){
+        imageContent.remove();
+      }
+
+      const file = e.target.files[0];
+      const blob = window.URL.createObjectURL(file);
+      createImageHTML(blob);
+    });
+  });
+</script>
