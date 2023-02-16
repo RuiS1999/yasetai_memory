@@ -1,2 +1,23 @@
-<h1>User::Homes#top</h1>
-<p>Find me in app/views/user/homes/top.html.erb</p>
+<p id="notice"><%= notice %></p>
+<div class="container">
+<h1>Users</h1>
+<table class="table table-hover">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Address</th>
+      <th scope="col">Phone</th>
+      <th colspan="3"></th>
+    </tr>
+    <% @users.each do |user| %>
+      <tr>
+        <td scope="row"><%= user.name %></td>
+        <td scope="row"><%= user.id_name %></td>
+        <td scope="row"><%= user.birth_day %></td>
+        <td><%= link_to 'Show', user, class: "btn btn-outline-primary btn-sm" %></td>
+        <td><%= link_to 'Edit', edit_user_path(user), class: "btn btn-outline-primary btn-sm" %></td>
+        <td>aaa</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>

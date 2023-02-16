@@ -5,7 +5,9 @@
         <label class="text-secondary">画像</label><br>
         <%= f.file_field :profile_image %>
       </div>
-      <div id="new-image"></div>  #追記
+      <div>
+        <div id="new-user-image" class="w-50"></div>
+      </div>
       </div>
       <div>
         <%= f.label :name %>
@@ -40,9 +42,9 @@
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const createImageHTML = (blob) => {
-      const imageElement = document.getElementById('new-image');
+      const imageElement = document.getElementById('new-user-image');
       const blobImage = document.createElement('img');
-      blobImage.setAttribute('class', 'new-img')
+      blobImage.setAttribute('class', 'new-user-img')
       blobImage.setAttribute('src', blob);
 
       imageElement.appendChild(blobImage);
