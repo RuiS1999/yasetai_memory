@@ -14,7 +14,7 @@
         <td scope="row"><%= user.id_name %></td>
         <td scope="row"><%= user.birth_day %></td>
         <td><%= link_to 'Show', user, class: "btn btn-outline-primary btn-sm" %></td>
-        <td><%= link_to 'Edit', edit_user_path(user.id), class: "btn btn-outline-primary btn-sm" %></td>
+        <td><%= link_to 'Edit', edit_user_path(user.id), data: {"turbolinks" => false}, class: "btn btn-outline-primary btn-sm" %></td>
         <td>aaa</td>
       </tr>
     <% end %>

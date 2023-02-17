@@ -23,17 +23,22 @@
 
   <div class="field">
     <%= f.label :id_name %><br />
-    <%= f.field :id_name %>
+    <%= f.text_field :id_name %>
   </div>
 
   <div class="field">
     <%= f.label :name %><br />
-    <%= f.field :name %>
+    <%= f.text_field :name %>
   </div>
 
   <div class="field">
-    <%= f.label :sex %><br />
-    <%= f.field :sex %>
+    <%= f.label :sex %>
+    <%= f.radio_button :sex, User.sexes.key(0) %>
+    <%= f.label :sex, "男性", value: User.sexes.key(0) %>
+    <%= f.radio_button :sex, User.sexes.key(1) %>
+    <%= f.label :sex, "女性", value: User.sexes.key(1) %>
+    <%= f.radio_button :sex, User.sexes.key(2) %>
+    <%= f.label :sex, "その他", value: User.sexes.key(2) %>
   </div>
 
   <div class="field">
