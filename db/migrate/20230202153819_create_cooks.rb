@@ -6,6 +6,7 @@ class CreateCooks < ActiveRecord::Migration[6.1]
       t.text        :introduction,  null: false
       t.text        :food_staff,    null: false
       t.text        :recipe,        null: false
+      t.integer     :time,          null: false
       t.integer     :serving,       null: false
 
       t.timestamps

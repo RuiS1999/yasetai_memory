@@ -87,6 +87,7 @@ ActiveRecord::Schema.define(version: 2023_02_02_155456) do
     t.text "introduction", null: false
     t.text "food_staff", null: false
     t.text "recipe", null: false
+    t.integer "time", null: false
     t.integer "serving", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -107,9 +108,10 @@ ActiveRecord::Schema.define(version: 2023_02_02_155456) do
   end
 
   create_table "hashtags", force: :cascade do |t|
-    t.string "hash_name", null: false
+    t.string "hash_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["hash_name"], name: "index_hashtags_on_hash_name", unique: true
   end
 
   create_table "impressions", force: :cascade do |t|

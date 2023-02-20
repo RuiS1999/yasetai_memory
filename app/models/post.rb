@@ -6,6 +6,8 @@ class Post < ApplicationRecord
   has_many :post_hashes,      dependent: :destroy
   has_many :hashtags,         through: :post_hashes
 
+  has_many_attached :post_images
+
   # ハッシュタグ
   after_create do
     post = Post.find_by(id: id)

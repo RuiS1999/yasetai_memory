@@ -2,7 +2,7 @@
   <div>
     <%= form_with model: @user, url: user_path do |f| %>
       <div class="form-group">
-        <label class="text-secondary">画像</label><br>
+        <label class="text-secondary" style="line-height: 1em;">画像</label><br>
         <%= f.file_field :profile_image %>
       </div>
       <div>
@@ -10,19 +10,18 @@
       </div>
       </div>
       <div>
-        <%= f.label :name %>
+        <p>ID名: <%= @user.id_name %></p>
+      </div>
+      <div class="form-group">
+        <%= f.label :name, "ユーザー名", class: "text-secondary", style: "line-height: 1em;" %>:<br />
         <%= f.text_field :name %>
       </div>
-      <div>
-        <%= f.label :id_name %>
-        <%= f.text_field :id_name %>
-      </div>
-      <div>
-        <%= f.label :profile %>
+      <div class="form-group">
+        <%= f.label :profile, "プロフィール", class: "text-secondary", style: "line-height: 1em;" %>:<br />
         <%= f.text_area :plofile %>
       </div>
-      <div>
-        <%= f.label :sex %>
+      <div class="form-group">
+        <%= f.label :sex, "性別", class: "text-secondary", style: "line-height: 1em;" %>:<br />
         <%= f.radio_button :sex, User.sexes.key(0) %>
         <%= f.label :sex, "男性", value: User.sexes.key(0) %>
         <%= f.radio_button :sex, User.sexes.key(1) %>
@@ -30,11 +29,11 @@
         <%= f.radio_button :sex, User.sexes.key(2) %>
         <%= f.label :sex, "その他", value: User.sexes.key(2) %>
       </div>
-      <div>
-        <%= f.label :birth_date, "生年月日" %>
+      <div class="form-group">
+        <%= f.label :birth_date, "生年月日", {default: Date.today - 25.year}, class: "text-secondary", style: "line-height: 1em;" %>:<br />
         <%= f.date_select :birth_date %>
       </div>
-      <%= f.submit %>
+      <%= f.submit "更新する", class: "btn btn-success" %>
     <% end %>
   </div>
 </div>
